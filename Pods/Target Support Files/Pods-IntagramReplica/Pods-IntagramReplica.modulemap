@@ -1,0 +1,6 @@
+framework module Pods_IntagramReplica {
+  umbrella header "Pods-IntagramReplica-umbrella.h"
+
+  export *
+  module * { export * }
+}
