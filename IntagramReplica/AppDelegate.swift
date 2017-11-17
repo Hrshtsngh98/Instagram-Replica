@@ -12,7 +12,6 @@ import GoogleSignIn
 import FBSDKCoreKit
 import UserNotifications
 import FirebaseMessaging
-import SimulatorRemoteNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
@@ -36,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             }
         }
         
-        application.listenForRemoteNotifications()
+//        application.listenForRemoteNotifications()
         
         Messaging.messaging().delegate = self
         Messaging.messaging().shouldEstablishDirectChannel = true
@@ -73,14 +72,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         
         
-        let viewController = self.window?.rootViewController?.storyboard?.instantiateViewController(withIdentifier: "HomeTabBarController") as! MainTabViewController
-        self.window?.rootViewController = viewController
-        var view = UIView(frame: UIScreen.main.bounds)
-        window?.makeKeyAndVisible()
-        var a = MainTabViewController(nibName: <#T##String?#>, bundle: <#T##Bundle?#>)
-        viewController.present(cont!, animated: true, completion: nil)
-        //mainTabCont?.present(cont!, animated: true, completion: nil)
-    }
+//        let viewController = self.window?.rootViewController?.storyboard?.instantiateViewController(withIdentifier: "HomeTabBarController") as! MainTabViewController
+//        self.window?.rootViewController = viewController
+//        var view = UIView(frame: UIScreen.main.bounds)
+//        window?.makeKeyAndVisible()
+//        var a = MainTabViewController(nibName: <#T##String?#>, bundle: <#T##Bundle?#>)
+//        viewController.present(cont!, animated: true, completion: nil)
+//        //mainTabCont?.present(cont!, animated: true, completion: nil)
+//    }
     
     
 //    func push(_ viewController: UIViewController?) {
@@ -89,7 +88,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 //                presentedController?.navigationController?.pushViewController(pushViewController, animated: true)
 //            }
 //        }
-//    }
+    }
     
     func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
 
